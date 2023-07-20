@@ -39,6 +39,7 @@ const userSlice = createSlice({
   }
 })
 
+export const getUser = (store) => store.user.username
 export const { updateName } = userSlice.actions
 export default userSlice.reducer
 
