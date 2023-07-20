@@ -3,7 +3,7 @@
 import { Link } from "react-router-dom"
 
 
-const Button = ({ children, disabled, to, type }) => {
+const Button = ({ children, disabled, to, type, onClick }) => {
   const base = "inline-block rounded-full bg-yellow-400 font-semibold uppercase tracking-wide text-stone-800 hover:bg-yellow-300 transition-colors duration-500 disabled:cursor-not-allowed mt-4 text-xs"
 
   const style = {
@@ -14,6 +14,13 @@ const Button = ({ children, disabled, to, type }) => {
   if (to) {
     return <Link className={style[type]} to={to}>{children}</Link>
   }
+
+  if (onClick) {
+    return (
+      <button onClick={onClick} disabled={disabled} className={style[type]} >{children}</button>
+    )
+  }
+
   return (
     <button disabled={disabled} className={style[type]} >{children}</button>
   )
