@@ -41,6 +41,17 @@ const cartSlice = createSlice({
 
 export const getCart = (store) => store.cart.cart
 
+// Jonas code:
+// export const getCurrentQuantityById = (id) => (store) => store.cart.cart.find((item) => item.pizzaId === id)?.quantity ?? 0
+
+// This code looks more understandable for me:
+export const getCurrentQuantityById = (id) => (store) => {
+  const pizza = store.cart.cart.find((item) => item.pizzaId === id);
+
+  // If the pizza is found, return its quantity, otherwise, return 0.
+  return pizza?.quantity ?? 0;
+};
+
 export const getTotalCartQuantity = (store) => store.cart.cart.reduce((acc, item) => acc + item.quantity, 0)
 
 export const getTotalCartPrice = (store) => store.cart.cart.reduce((acc, item) => acc + item.unitPrice, 0)
