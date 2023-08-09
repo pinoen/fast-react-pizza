@@ -4,11 +4,9 @@
 - [Overview](#overview)
 - [Built With](#built-with)
 - [Features](#features)
-- [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
 
 ## Overview
-
 - A restaurant (business) needed a simple way of allowing customers to order pizzas and get them delivered to their home.
 - We built the application front-end.
 - It was built with React using Vite.
@@ -40,8 +38,6 @@
 - Each order will get a unique ID that should be displayed, so the user can later look up their order based on the ID.
 - Users should be able to mark their order as “priority” order even after it has been placed.
 ![Order](public/order.png)
-
-
 
 ### From those requirements, the app needs these pages:
   1. Homepage
